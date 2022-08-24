@@ -25,7 +25,6 @@ public class Banco {
 	}
 	
 	public List<Empresa> getEmpresas() {
-		System.out.println(Banco.lista);
 		return Banco.lista;
 	}
 
