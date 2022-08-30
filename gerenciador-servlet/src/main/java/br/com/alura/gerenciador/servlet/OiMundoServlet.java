@@ -8,11 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns="/oi")
+@WebServlet(urlPatterns= {"/oi","/oiMundo"}, loadOnStartup = 1)
 public class OiMundoServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
 
+	public OiMundoServlet() {
+		System.out.println("Criando Oi Mundo Servlet");
+	}
+	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
