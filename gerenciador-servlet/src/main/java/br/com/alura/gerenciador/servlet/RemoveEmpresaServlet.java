@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.alura.gerenciador.banco.Banco;
+import br.com.alura.gerenciador.modelo.Banco;
 
 
 @WebServlet("/removeEmpresa")
@@ -20,7 +20,7 @@ public class RemoveEmpresaServlet extends HttpServlet {
 		Integer id = Integer.valueOf(paramId);
 		
 		Banco banco = new Banco();
-		banco.removeEmpresas(id);
+		banco.removeEmpresa(id);
 		
 		response.sendRedirect("listaEmpresas");
 		

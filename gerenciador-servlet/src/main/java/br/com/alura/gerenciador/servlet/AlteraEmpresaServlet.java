@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.alura.gerenciador.banco.Banco;
-import br.com.alura.gerenciador.model.Empresa;
+import br.com.alura.gerenciador.modelo.Banco;
+import br.com.alura.gerenciador.modelo.Empresa;
 
 @WebServlet("/alteraEmpresa")
 public class AlteraEmpresaServlet extends HttpServlet {
@@ -35,7 +35,7 @@ public class AlteraEmpresaServlet extends HttpServlet {
 		System.out.println(id);
 		
 		Banco banco = new Banco();
-		Empresa empresa = banco.buscaEmpresaPeloId(id);
+		Empresa empresa = banco.buscaEmpresaPelaId(id);
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataFormatada);
 		

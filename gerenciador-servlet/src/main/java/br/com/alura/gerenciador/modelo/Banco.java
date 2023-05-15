@@ -1,27 +1,23 @@
-package br.com.alura.gerenciador.banco;
+package br.com.alura.gerenciador.modelo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import br.com.alura.gerenciador.model.Empresa;
-
 public class Banco {
 	
-	private static List<Empresa> lista = new ArrayList<Empresa>();
+	private static List<Empresa> lista = new ArrayList<>();
 	private static Integer chaveSequencial = 1;
 	
 	static {
 		Empresa empresa = new Empresa();
-		empresa.setId(Banco.chaveSequencial++);
+		empresa.setId(chaveSequencial++);
 		empresa.setNome("Alura");
-		
-		Empresa empresaDois = new Empresa();
-		empresaDois.setId(Banco.chaveSequencial++);
-		empresaDois.setNome("Caelum");
-		
+		Empresa empresa2 = new Empresa();
+		empresa2.setId(chaveSequencial++);
+		empresa2.setNome("Caelum");
 		lista.add(empresa);
-		lista.add(empresaDois);
+		lista.add(empresa2);
 	}
 
 	public void adiciona(Empresa empresa) {
@@ -29,31 +25,29 @@ public class Banco {
 		Banco.lista.add(empresa);
 	}
 	
-	public List<Empresa> getEmpresas() {
+	public List<Empresa> getEmpresas(){
 		return Banco.lista;
 	}
-	
-	public void removeEmpresas(Integer id) {
+
+	public void removeEmpresa(Integer id) {
 		
 		Iterator<Empresa> it = lista.iterator();
 		
 		while(it.hasNext()) {
-			Empresa empresa = it.next();
+			Empresa emp = it.next();
 			
-			if(empresa.getId() == id) {
+			if(emp.getId() == id) {
 				it.remove();
 			}
 		}
-		
 	}
 
-	public Empresa buscaEmpresaPeloId(Integer id) {
+	public Empresa buscaEmpresaPelaId(Integer id) {
 		for (Empresa empresa : lista) {
 			if(empresa.getId() == id) {
 				return empresa;
 			}
 		}
-		
 		return null;
 	}
 
