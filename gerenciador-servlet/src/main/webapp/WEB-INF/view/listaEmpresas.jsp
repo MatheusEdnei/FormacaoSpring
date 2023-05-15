@@ -13,7 +13,12 @@
 		<title>Lista de Empresas</title>
 	</head>
 	<body>
-	
+		<c:import url="logout-parcial.jsp"/>
+		<a href="entrada?acao=Logout">Sair</a>
+		</br></br></br>
+		
+		Usuario Logado: ${usuarioLogado.login}
+		
 		<c:if test="${not empty empresa}"> 
 			Empresa ${empresa} cadastrada com sucesso.
 		</c:if>

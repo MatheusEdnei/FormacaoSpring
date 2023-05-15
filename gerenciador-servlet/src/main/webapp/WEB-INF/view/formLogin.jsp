@@ -9,7 +9,9 @@
 	</head>
 	
 	<body>
-			
+		
+		Usuario Logado: ${usuarioLogado.login}
+		
 		<form action="${linkEntrandaServlet}" method="post">
 		
 			Login: <input type="text" name="login"/>
