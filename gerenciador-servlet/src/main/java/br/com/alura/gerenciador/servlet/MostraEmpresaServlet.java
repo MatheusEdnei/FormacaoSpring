@@ -29,7 +29,7 @@ public class MostraEmpresaServlet extends HttpServlet {
 		
 		request.setAttribute("empresa", empresa);
 		RequestDispatcher requestDispatcher = 
-				request.getRequestDispatcher("/formAlteraEmpresa.jsp");
+				request.getRequestDispatcher("WEB-INF/view/formAlteraEmpresa.jsp");
 		
 		requestDispatcher.forward(request, response);
 	}
